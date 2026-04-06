@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATM Service | MaddoxPay Registration</title>
+    <meta name="description" content="Official MATM Service Registration Workflow.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Professional NavBar -->
+        <nav class="navbar">
+            <div class="logo">
+                <h1 style="color: #3b5998; font-size: 1.5rem; margin: 0;">maddox<span style="color: #2ecc71;">Pay</span></h1>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">How it Works</a>
+                <a href="#" class="nav-link">About Us</a>
+                <a href="#" class="nav-link active">Services</a>
+                <a href="#" class="nav-link">Contact Us</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-outline" style="padding: 0.5rem 1rem;">Login</button>
+                <button class="btn btn-blue" style="padding: 0.5rem 1rem;">Register Now</button>
+            </div>
+        </nav>
+
+        <div id="tutorial-overlay"></div>
+        
+        <main>
+            <!-- Screen 1: Registration Form -->
+            <section id="screen-register" class="screen active">
+            <div class="card">
+                <div class="form-header">
+                    <h1 class="form-title">MATM Service</h1>
+                </div>
+                <span class="registration-form-label">Registration Form</span>
+                
+                <form id="form-register" onsubmit="return false;">
+                    <div class="form-group">
+                        <label class="form-label">Maddox user ID <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <input type="text" id="reg-userid" value="MDLNWD16818" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">First Name <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <input type="text" id="reg-firstname" required placeholder="Dileep Kumar">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <input type="text" id="reg-lastname" required placeholder="Pal">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <input type="email" id="reg-email" required placeholder="dileep@maddoxpay.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Mobile <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <input type="tel" id="reg-phone" required placeholder="9953698124">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Shop Name <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <input type="text" id="reg-shopname" required placeholder="Shop Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">State/UT <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <select id="reg-state" required>
+                                <option value="">Select State</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">District <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <select id="reg-district" required>
+                                <option value="">Select Your District</option>
+                                <option value="Gautam Buddha Nagar">Gautam Buddha Nagar</option>
+                                <option value="New Delhi">New Delhi</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Residence Address <span class="required">*</span><br><small style="color: #27ae60;">(As Verified By Dept Post)</small></label>
+                        <div class="input-wrapper">
+                            <textarea id="reg-address" required placeholder="sanjay colony sdfkj" rows="2"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Pin Code <span class="required">*</span><br><small style="color: #27ae60;">(To Be Verified By Principal Agent)</small></label>
+                        <div class="input-wrapper">
+                            <input type="text" id="reg-pincode" required placeholder="110086">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Date Of Birth <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <input type="date" id="reg-dob" required value="1993-10-10">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">PAN Number <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <input type="text" id="reg-pan" required placeholder="CBLPP0010M">
+                        </div>
+                    </div>
+                    <div class="form-group" style="align-items: flex-start;">
+                        <label class="form-label">Registration Fee <span class="required">*</span></label>
+                        <div class="input-wrapper fee-container">
+                            <label class="fee-option">
+                                <input type="radio" name="reg-fee" value="1499" required>
+                                <span>Without device: <span class="fee-old">₹1700.00</span> <span class="fee-new">₹1499.00/-</span></span>
+                            </label>
+                            <label class="fee-option">
+                                <input type="radio" name="reg-fee" value="1999" checked>
+                                <span>With device: <span class="fee-old">₹2399.00</span> <span class="fee-new">₹1999.00/-</span></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 20px;">
+                        <div class="form-label"></div>
+                        <div class="input-wrapper">
+                            <button type="submit" class="btn btn-blue">Subscribe</button>
+                        </div>
+                    </div>
+                </form>
+                
+                <div class="form-footer-note">
+                    If you are facing any issues, please call us on +91311622159 number.
+                </div>
+            </div>
+            </section>
+
+        <!-- Screen 2: Hardware Preparation -->
+        <div id="screen-env-setup" class="screen">
+            <div class="card flex-column text-center gap-md">
+                <div class="text-orange" style="font-size: 3rem;">
+                    <i class="fas fa-file-download"></i>
+                </div>
+                <h2>MATM Driver Installation</h2>
+                <p>To begin using the MATM service, please ensure you have the correct drivers installed on your PC or Mobile.</p>
+                <div class="flex-center gap-md mt-md">
+                    <button id="btn-driver-installed" class="btn btn-blue">I've Installed MATM Driver</button>
+                </div>
+                
+                <div id="bt-steps" class="hidden animate-fade-in mt-xl">
+                    <hr class="mb-lg">
+                    <p class="mb-lg">Next, enable **Bluetooth** on both your PC/Mobile and the MATM device.</p>
+                    <div class="flex-center gap-md" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                        <button id="btn-bt-pc-ok" class="btn btn-outline"><i class="fab fa-bluetooth-b mr-sm"></i> PC Bluetooth On</button>
+                        <button id="btn-bt-matm-ok" class="btn btn-outline"><i class="fas fa-mobile-alt mr-sm"></i> MATM Bluetooth On</button>
+                    </div>
+                    <button id="btn-env-done" class="btn btn-blue mt-xl hidden">Proceed to Pairing</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 3: Bluetooth Pairing -->
+        <div id="screen-pairing" class="screen">
+            <div class="card flex-column flex-center gap-xl text-center">
+                <div style="font-size: 4rem; color: var(--secondary);">
+                    <i class="fas fa-sync-alt fa-spin"></i>
+                </div>
+                <h2>Connecting Devices...</h2>
+                <p>Searching for MATM device via Bluetooth. Please ensure the device is discoverable.</p>
+                <div id="pairing-success" class="hidden text-success" style="font-weight: 600;">
+                    <i class="fas fa-check-circle"></i> Connected Successfully!
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 4: Services Dashboard -->
+        <section id="screen-services" class="screen">
+            <div class="hero-banner">
+                <h2>Our Services</h2>
+                <p class="hero-subtitle">Discover a world of services - MaddoxPay</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Fino (AEPS) Card -->
+                <div class="service-card dimmed">
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="color: #7f8c8d; font-size: 0.8rem; letter-spacing: 1px;">FINO PAYMENT BANK</h4>
+                    </div>
+                    <i class="fas fa-university" style="color: #3498db;"></i>
+                    <h3>AEPS Cash</h3>
+                    <p class="description">Secure Aadhaar-enabled payments and cash withdrawal services for customers.</p>
+                    <button class="btn btn-blue">Learn More</button>
+                </div>
+                
+                <!-- MATM Service Card (Tutorial Target) -->
+                <div id="target-matm-service" class="service-card">
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="color: #7f8c8d; font-size: 0.8rem; letter-spacing: 1px;">MADDOXPAY</h4>
+                    </div>
+                    <i class="fas fa-credit-card" style="color: #2ecc71;"></i>
+                    <h3>MATM Service</h3>
+                    <p class="description">Professional Micro ATM terminal for all debit card transactions and inquiries.</p>
+                    <div class="arrow-indicator" id="arrow-matm">
+                        <span style="font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 4px;">Click Here</span>
+                        <i class="fas fa-arrow-down fa-2x"></i>
+                    </div>
+                    <button class="btn btn-blue">Apply Now</button>
+                </div>
+                
+                <!-- Mobile & DTH Card -->
+                <div class="service-card dimmed">
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="color: #7f8c8d; font-size: 0.8rem; letter-spacing: 1px;">RECHARGE</h4>
+                    </div>
+                    <i class="fas fa-mobile-alt" style="color: #e67e22;"></i>
+                    <h3>Mobile & DTH</h3>
+                    <p class="description">Instant recharges for all major mobile operators and DTH service providers.</p>
+                    <button class="btn btn-blue">Learn More</button>
+                </div>
+
+                <!-- FASTag Card -->
+                <div class="service-card dimmed">
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="color: #7f8c8d; font-size: 0.8rem; letter-spacing: 1px;">FASTAG</h4>
+                    </div>
+                    <i class="fas fa-truck" style="color: #9b59b6;"></i>
+                    <h3>FASTag Service</h3>
+                    <p class="description">Electronic toll collection services for a seamless highway travel experience.</p>
+                    <button class="btn btn-blue">Learn More</button>
+                </div>
+
+                <!-- IRCTC Card -->
+                <div class="service-card dimmed">
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="color: #7f8c8d; font-size: 0.8rem; letter-spacing: 1px;">IRCTC</h4>
+                    </div>
+                    <i class="fas fa-train" style="color: #e74c3c;"></i>
+                    <h3>Train Booking</h3>
+                    <p class="description">Easily book your train tickets with these easy steps and get your PNR.</p>
+                    <button class="btn btn-blue">Book Now</button>
+                </div>
+
+                <!-- Legal Card -->
+                <div class="service-card dimmed">
+                    <div style="margin-bottom: 1rem;">
+                        <h4 style="color: #7f8c8d; font-size: 0.8rem; letter-spacing: 1px;">MADDOX</h4>
+                    </div>
+                    <i class="fas fa-gavel" style="color: #2c3e50;"></i>
+                    <h3>Legal Services</h3>
+                    <p class="description">Professional legal consultancy and document preparation services.</p>
+                    <button class="btn btn-blue">Inquiry</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screen 5: MATM Menu -->
+        <div id="screen-matm-menu" class="screen">
+            <div class="flex-column gap-xl">
+                <h2 class="mb-lg">MATM Transactions</h2>
+                <div class="services-grid">
+                    <div id="target-withdrawal" class="service-card">
+                        <i class="fas fa-money-bill-wave" style="color: #27ae60;"></i>
+                        <h3>Cash Withdrawal</h3>
+                        <div class="arrow-indicator" id="arrow-withdrawal">
+                            <span style="font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 4px;">Click Here</span>
+                            <i class="fas fa-arrow-down fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="service-card dimmed">
+                        <i class="fas fa-search-dollar" style="color: #2980b9;"></i>
+                        <h3>Balance Inquiry</h3>
+                    </div>
+                    <div class="service-card dimmed">
+                        <i class="fas fa-history" style="color: #f39c12;"></i>
+                        <h3>Mini Statement</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 6: Withdrawal Form -->
+        <div id="screen-withdrawal-form" class="screen">
+            <div class="card max-w-md mx-auto">
+                <h2 class="mb-lg text-center">Cash Withdrawal</h2>
+                <form id="form-withdrawal">
+                    <div class="mb-md">
+                        <label class="form-label" style="display: block; text-align: left; margin-bottom: 0.5rem;">Customer Phone Number</label>
+                        <input type="tel" id="wd-phone" required placeholder="Enter Mobile Number">
+                    </div>
+                    <div class="mb-lg">
+                        <label class="form-label" style="display: block; text-align: left; margin-bottom: 0.5rem;">Withdrawal Amount (₹)</label>
+                        <input type="number" id="wd-amount" required placeholder="Enter Amount">
+                    </div>
+                    <button type="submit" class="btn btn-blue w-full">Initiate Transaction</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Screen 7: Hardware Interaction -->
+        <div id="screen-hardware-step" class="screen">
+            <div class="flex-column flex-center gap-xl text-center">
+                <div style="position: relative; width: 300px; margin: 0 auto;">
+                    <img src="assets/matm_device.png" style="width: 100%; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));">
+                    <img src="assets/debit_card.png" id="card-ani" class="hidden" style="position: absolute; width: 120px; top: 120px; left: 50%; transform: translateX(-50%) rotate(90deg); transition: top 1.5s ease-in-out;">
+                </div>
+                <div id="hw-step-text" class="card" style="margin-top: 20px;">
+                    <h2 id="hw-main-text">Please Insert Card</h2>
+                    <p id="hw-sub-text">Waiting for device communication...</p>
+                </div>
+                <div id="pin-pad" class="hidden card animate-fade-in">
+                    <p class="mb-md">Confirm PIN on MATM Device</p>
+                    <div style="font-size: 2.5rem; letter-spacing: 0.5rem; color: var(--primary);">••••</div>
+                    <button id="btn-pin-done" class="btn btn-blue mt-lg w-full">Confirm Transaction</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 8: Results & Receipt -->
+        <div id="screen-result" class="screen">
+            <div class="flex-column flex-center gap-xl text-center">
+                <div id="result-animation" style="font-size: 5rem;" class="animate-fade-in">
+                    <!-- Icon injected by JS -->
+                </div>
+                
+                <div id="receipt-container" class="animate-fade-in">
+                    <div class="receipt">
+                        <div style="border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 20px;">
+                            <h3 style="margin-bottom: 5px;">MADDOXPAY MATM</h3>
+                            <p style="font-size: 0.8rem;">TRANSACTION SLIP</p>
+                        </div>
+                        <div style="text-align: left; font-size: 0.9rem; line-height: 1.8;">
+                            <p>USER ID: <span id="r-userid">MDLNWD16818</span></p>
+                            <p>SHOP: <span id="r-shop">MADDOX DIGITAL</span></p>
+                            <p>DATE: <span id="r-date">06-04-2026</span></p>
+                            <p>TXN ID: MP728349281</p>
+                            <hr style="border: 0.5px dashed #333; margin: 10px 0;">
+                            <p>TYPE: CASH WITHDRAWAL</p>
+                            <p>MOB:  <span id="r-phone">9953xxxx24</span></p>
+                            <p>AMT:  ₹ <span id="r-amount">500.00</span></p>
+                            <p>STAT: <span id="r-status" style="font-weight: bold;">SUCCESS</span></p>
+                            <hr style="border: 0.5px dashed #333; margin: 10px 0;">
+                            <p style="text-align: center; margin-top: 15px;">THANK YOU FOR USING MATM!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="btn-restart" class="btn btn-blue">Finish & Exit</button>
+            </div>
+        </div>
+        </main>
+
+        <footer class="text-center mt-xl mb-lg">
+            <p style="font-size: 0.8rem; color: var(--text-muted);">© 2026 Maddox Digital. All rights reserved.</p>
+        </footer>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
